@@ -1,0 +1,82 @@
+{
+  "name": "webpack5-mpa",
+  "version": "1.0.0",
+  "author": {
+    "name": "Evgeny Leukhin",
+    "email": "e.leukhin@gmail.com",
+    "url": "https://github.com/EvgenyLeukhin"
+  },
+  "description": "Frontend builder for multi-page application",
+  "main": "package.json",
+  "keywords": [
+    "frontend",
+    "mpa",
+    "static",
+    "web page",
+    "landing page",
+    "builder",
+    "webpack"
+  ],
+  "scripts": {
+    "start": "webpack serve --config=./webpack.dev.js",
+    "build-dev": "webpack --config=./webpack.dev.js",
+    "build-prod": "webpack --config=./webpack.prod.js",
+    "serve": "node express.js",
+    "serve2": "serve -s build",
+    "deploy": "npm run build && gh-pages -d build",
+    "delete-packages": "rm -rf node_modules",
+    "eslint-find": "eslint \"./src/**/*.{js,ts,json}\"",
+    "eslint-fix": "eslint --fix \"./src/**/*.{js,ts,json}\"",
+    "npm-install": "npm install",
+    "yarn-install": "yarn install"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.15.0",
+    "@babel/preset-env": "^7.15.0",
+    "babel-eslint": "^10.1.0",
+    "babel-loader": "^8.2.2",
+    "chalk": "^2.4.2",
+    "clean-webpack-plugin": "^4.0.0",
+    "compression": "^1.7.4",
+    "compression-webpack-plugin": "^8.0.1",
+    "copy-webpack-plugin": "^9.0.1",
+    "css-loader": "^6.2.0",
+    "eslint": "^7.32.0",
+    "express": "^4.17.1",
+    "favicons": "^6.2.2",
+    "favicons-webpack-plugin": "^5.0.2",
+    "html-webpack-plugin": "^5.3.2",
+    "open-browser-webpack-plugin": "^0.0.5",
+    "postcss": "^8.3.8",
+    "postcss-loader": "^6.1.1",
+    "postcss-preset-env": "^6.7.0",
+    "sass": "^1.38.2",
+    "sass-loader": "^12.1.0",
+    "serve": "^12.0.1",
+    "style-loader": "^3.2.1",
+    "url-loader": "^4.1.1",
+    "webpack": "^5.51.1",
+    "webpack-cli": "^4.8.0",
+    "webpack-dev-server": "^4.0.0",
+    "webpackbar": "^5.0.0-3"
+  },
+  "dependencies": {
+    "gh-pages": "^3.2.3",
+    "mini-css-extract-plugin": "^2.3.0",
+    "normalize.css": "^8.0.1"
+  },
+  "license": "MIT",
+  "homepage": "https://EvgenyLeukhin.github.io/webpack5-mpa",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EvgenyLeukhin/webpack5-mpa.git"
+  },
+  "bugs": {
+    "url": "https://github.com/EvgenyLeukhin/webpack5-mpa/issues"
+  },
+  "browserslist": [
+    "last 2 version",
+    "iOS >= 8",
+    "not dead"
+  ]
+}

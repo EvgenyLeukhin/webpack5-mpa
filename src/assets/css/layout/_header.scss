@@ -1,0 +1,11 @@
+.page-header {
+  background-color: rgba(0,0,0, 0.1);
+
+  &__inner {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    min-height: 40px;
+  }
+}

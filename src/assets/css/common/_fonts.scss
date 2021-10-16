@@ -1,0 +1,28 @@
+// Consolas
+@font-face {
+  font-family: 'Consolas';
+  src:
+    local('Consolas'),
+    url('@fonts/Consolas/Consolas-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Consolas';
+  src:
+    local('Consolas'),
+    url('@fonts/Consolas/Consolas-Italic.ttf') format('truetype');
+  font-weight: normal;
+  font-style: italic;
+}
+
+// Anfisa Grotesk
+@font-face {
+  font-family: 'Anfisa Grotesk';
+  src: local('Anfisa Grotesk'),
+    url('@fonts/AnfisaGrotesk/anfisagrotesk.woff2') format('woff2'),
+    url('@fonts/AnfisaGrotesk/anfisagrotesk.woff') format('woff'),
+    url('@fonts/AnfisaGrotesk/anfisagrotesk.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>
+    <%= htmlWebpackPlugin.options.title %>
+  </title>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="page-header">
+    <div class="container">
+      <div class="page-header__inner">
+        ...HEADER...
+      </div>
+    </div>
+  </header>
+
+  <!-- PAGE-CONTENT -->
+  <main class="main-content index-page">
+
+    <!-- Section-1 -->
+    <section classname="index-page-section-01">
+      <div class="container">
+        <div class="index-page-section-01__inner">
+          <div class="col-left">
+            <img src="img/webpack-logo.png" class="img-fluid" alt="webpack-logo.png" />
+          </div>
+
+          <div class="col-right">
+            <h1>
+              <span>Webpack 5 for MPA</span>
+            </h1>
+
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore ipsam optio consequatur nisi, amet iure rem dolores laborum voluptates atque eos in, minus debitis veritatis sequi incidunt obcaecati tempora fuga?</p>
+
+            <hr>
+
+            <h2>Images</h2>
+            <ul class="images">
+              <li>
+                <h4>Image tag with src</h4>
+                <img src="img/smile.png" alt="smile.png" style="width: 50px;">
+              </li>
+              <li>
+                <h4>Inline background style</h4>
+                <div
+                  style="
+                    width: 50px;
+                    height: 50px;
+                    background-image: url('img/smile.png');
+                    background-size: cover;
+                  "></div>
+              </li>
+              <li>
+                <h4>Background image from css</h4>
+                <div class="test-image"></div>
+              </li>
+            </ul>
+
+            <hr>
+
+            <h2>Custom fonts</h2>
+            <ul>
+              <li><code>npm install --save-dev webpack webpack-cli webpack-dev-server</code></li>
+              <li><abbr title="RF">RF - Russian Federation</abbr></li>
+            </ul>
+
+            <a href="second.html" role="button">To second page</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="page-footer">
+    <div class="container">
+      <div class="page-footer__inner">
+        ... FOOTER ...
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,14 @@
+# node packages folder
+node_modules/
+
+# build folder
+build/
+
+# packages lock files
+package-lock.json
+yarn.lock
+
+# Design files folder
+_design
+
+Desktop.ini

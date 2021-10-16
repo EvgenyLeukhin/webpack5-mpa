@@ -1,0 +1,13 @@
+{
+  "presets": [
+    [
+      "@babel/preset-env",
+      {
+        "debug": true
+      }
+    ]
+  ],
+  "ignore": [
+    "/node_modules/"
+  ]
+}

@@ -1,0 +1,31 @@
+.index-page-section-01 {
+  color: inherit;
+  &__inner {
+    display: flex;
+
+    @media (max-width: 750px) {
+      flex-direction: column;
+      img {
+        margin-bottom: 20px;
+      }
+    }
+
+    img {
+      max-width: 350px;
+      width: 100%;
+      height: auto;
+    }
+
+    & > div {
+      flex-basis: 50%;
+
+      &.col-left {
+        align-self: center;
+      }
+
+      &.col-right {
+        padding-left: 30px;
+      }
+    }
+  }
+}
