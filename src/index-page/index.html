@@ -4,9 +4,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>
-    <%= htmlWebpackPlugin.options.title %>
-  </title>
+  <title>MPA | Index page</title>
 </head>
 <body>
 
@@ -25,7 +23,7 @@
       <div class="container">
         <div class="index-page-section-01__inner">
           <div class="col-left">
-            <img src="img/webpack-logo.png" class="img-fluid" alt="webpack-logo.png" />
+            <img src="../assets/img/webpack-logo.png" class="img-fluid" alt="webpack-logo.png" />
           </div>
 
           <div class="col-right">
@@ -40,21 +38,17 @@
             <h2>Images</h2>
             <ul class="images">
               <li>
-                <h4>Image tag with src</h4>
-                <img src="img/smile.png" alt="smile.png" style="width: 50px;">
+                <h4>Image tag with src +++</h4>
+                <img src="../assets/img/smile.png" alt="smile.png" style="width: 50px;">
               </li>
               <li>
-                <h4>Inline background style</h4>
-                <div
-                  style="
-                    width: 50px;
-                    height: 50px;
-                    background-image: url('img/smile.png');
-                    background-size: cover;
-                  "></div>
+                <h4>Inline background style ---</h4>
+                <div class="test" style="border: 1px solid maroon; background: url(../assets/img/smile.png)">
+                  doesn't work!!!
+                </div>
               </li>
               <li>
-                <h4>Background image from css</h4>
+                <h4>Background image from css +++</h4>
                 <div class="test-image"></div>
               </li>
             </ul>

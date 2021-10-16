@@ -1,19 +1,19 @@
 // fonts and global config (vars and mixins)
-@import "@css/common/fonts";
-@import "@css/common/vars";
-@import "@css/common/mixins";
+@import "@css/common/_fonts";
+@import "@css/common/_vars";
+@import "@css/common/_mixins";
 
 // reset-libs
 // @import "~normalize.css";
-@import "@css/common/bootstrap-reboot";
+@import "@css/common/_bootstrap-reboot";
 
 // layout
-@import "@css/layout/header";
-@import "@css/layout/footer";
+@import "@css/layout/_header";
+@import "@css/layout/_footer";
 
 // import pages
-@import "@index-page/index";
-@import "@second-page/second";
+@import "@index-page/_index";
+@import "@second-page/_second";
 
 
 // global styles

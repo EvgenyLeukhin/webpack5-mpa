@@ -3,23 +3,24 @@
 Webpack custom builder for static landing pages or multipage web-applications
 
 * babel +++
+  * add TypeScript ???
 * images +++
   * img-tags +++
-  * backgroud-images +++
-  * bacground-image (url-loader) +++
+  * inline backgroud-images ---
+  * bacground-image in css +++
   * images prod optimization ---
-  * img-tags (url-loader) ---
-  * handle images without CopyWebpackPlugin ---
+  * url-loader ---
+  * handle images without CopyWebpackPlugin +++
 * styles +++
   * use scss +++
   * use vars and mixins +++
-  * styles autoprefixers and optimization +++
   * one bundle in prod-mode +++
+  * styles autoprefixers and optimization +++
 * html +++
   * include common html-parts with html-preproc ---
 * fonts +++
 * favicons +++
-* check deploy ---
+* check deploy +++
 * add some js-code and libraries ---
 
 ## npm

@@ -28,7 +28,7 @@ module.exports = {
     watchFiles: `${paths.src}/**/*`,
   },
 
-  // input-output
+  // input-output (can add another entry file)
   entry: {
     index: `${paths.src}/index.js`,
   },
@@ -43,7 +43,7 @@ module.exports = {
     extensions: ['.js', '.jsx'],
     alias: {
       '@css': path.resolve(paths.src,   'assets', 'css'),
-      '@img': path.resolve(paths.src,   'assets', 'img'),
+      '@img': path.resolve(paths.src,   'assets', 'img'), // works in css
       '@icons': path.resolve(paths.src, 'assets', 'img', 'icons'),
       '@fonts': path.resolve(paths.src, 'assets', 'fonts'),
       '@index-page':  paths.indexPage,
@@ -53,6 +53,11 @@ module.exports = {
 
   module: {
     rules: [
+      // HTML (need for images loading) //
+      {
+        test: /\.html$/i,
+        loader: "html-loader",
+      },
       // JS //
       {
         test: /\.js$/,
@@ -70,9 +75,13 @@ module.exports = {
       },
       // IMG //
       {
-        test: /\.(png|svg|jpg|jpeg|gif)$/i,
-        type: 'asset/inline',
+        test: /\.(jpe?g|svg|png|gif)$/,
+        type: 'asset/resource',
+        generator: {
+          filename: 'img/[name][ext]',
+        },
       },
+
       // FONTS //
       {
         test: /\.(eot|ttf|woff|woff2)$/,
@@ -88,7 +97,6 @@ module.exports = {
     // COPY ASSETS FILES //
     new CopyWebpackPlugin({
       patterns: [
-        { from: 'src/assets/img', to: 'img' },     // copy image
         { from: 'src/assets/robots.txt', to: '' }, // copy robots.tsx
       ],
     }),
@@ -96,7 +104,6 @@ module.exports = {
     // HTML - MPA //
     // index
     new HtmlWebpackPlugin({
-      title: 'MPA | Index page',
       favicon: `${paths.src}/assets/img/icons/favicon.png`,
       template: `${paths.indexPage}/index.html`,
       filename: 'index.html',
@@ -104,7 +111,6 @@ module.exports = {
 
     // second
     new HtmlWebpackPlugin({
-      title: 'MPA | Second page',
       favicon: `${paths.src}/assets/img/icons/favicon.png`,
       template: `${paths.secondPage}/second.html`,
       filename: 'second.html',

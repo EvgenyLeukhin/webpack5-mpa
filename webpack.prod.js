@@ -68,6 +68,11 @@ module.exports = {
 
   module: {
     rules: [
+      // HTML (need for images loading) //
+      {
+        test: /\.html$/i,
+        loader: "html-loader",
+      },
       // JS //
       {
         test: /\.js$/,
@@ -84,11 +89,13 @@ module.exports = {
           'sass-loader'
         ],
       },
-
       // IMG //
       {
-        test: /\.(png|svg|jpg|jpeg|gif)$/i,
-        type: 'asset/inline',
+        test: /\.(jpe?g|svg|png|gif)$/,
+        type: "asset/resource",
+        generator: {
+          filename: "img/[name]-[hash:8][ext]",
+        },
       },
       // FONTS //
       {
@@ -108,7 +115,7 @@ module.exports = {
     // copy assets
     new CopyWebpackPlugin({
       patterns: [
-        { from: 'src/assets/img', to: 'img' },      // copy images
+        // { from: 'src/assets/img', to: 'img' },      // copy images
         { from: 'src/assets/robots.txt', to: '' },  // copy robots.txt
       ],
     }),
@@ -123,14 +130,12 @@ module.exports = {
 
     // HTML - MPA //
     new HtmlWebpackPlugin({
-      title: 'MPA | Index page',
       template: `${paths.indexPage}/index.html`,
       filename: 'index.html',
       minify: minifyHtmlOptions,
     }),
 
     new HtmlWebpackPlugin({
-      title: 'MPA | Second page',
       template: `${paths.secondPage}/second.html`,
       filename: 'second.html',
       minify: minifyHtmlOptions,
