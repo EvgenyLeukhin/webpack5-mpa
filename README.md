@@ -1,27 +1,30 @@
 # webpack5-mpa
 
-Webpack custom builder for static landing pages or multipage web-applications
+Webpack custom builder for static landing pages or multipage web-applications.
+
+Contains:
 
 * babel +++
   * add TypeScript ???
+  * add some js-code and libraries ---
 * images +++
   * img-tags +++
-  * inline backgroud-images ---
-  * bacground-image in css +++
-  * images prod optimization ---
   * url-loader +++
+  * bacground-image in css +++
+  * inline backgroud-image ---
+  * images prod optimization ---
   * handle images without CopyWebpackPlugin +++
 * styles +++
   * use scss +++
   * use vars and mixins +++
-  * one bundle in prod-mode +++
-  * styles autoprefixers and optimization +++
+  * autoprefixer in prod mode +++
+  * one bundle and optimization in prod-mode +++
 * html +++
+  * prod-optimization +++
   * include common html-parts with html-preproc ---
 * fonts +++
 * favicons +++
 * check deploy +++
-* add some js-code and libraries ---
 
 ## npm
 [https://www.npmjs.com/](https://www.npmjs.com/)
