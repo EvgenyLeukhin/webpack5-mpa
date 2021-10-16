@@ -23,7 +23,7 @@
     "build-prod": "webpack --config=./webpack.prod.js",
     "serve": "node express.js",
     "serve2": "serve -s build",
-    "deploy": "npm run build && gh-pages -d build",
+    "deploy": "npm run build-prod && gh-pages -d build",
     "delete-packages": "rm -rf node_modules",
     "eslint-find": "eslint \"./src/**/*.{js,ts,json}\"",
     "eslint-fix": "eslint --fix \"./src/**/*.{js,ts,json}\"",

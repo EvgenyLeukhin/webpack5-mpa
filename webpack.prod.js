@@ -3,7 +3,7 @@ const path = require('path');
 // import plugins
 const WebpackBar = require('webpackbar');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const CopyWebpackPlugin = require('copy-webpack-plugin'); // doesn't works
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 const CompressionPlugin = require('compression-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
@@ -17,17 +17,6 @@ const minifyHtmlOptions = {
   removeStyleLinkTypeAttributes: true,
   useShortDoctype: true,
 };
-
-// const pages = [
-//   {
-//     name: 'index',
-//     title: 'MPA | Index page',
-//   },
-//   {
-//     name: 'second',
-//     title: 'MPA | Second page',
-//   },
-// ];
 
 // paths
 const paths = {
@@ -101,6 +90,14 @@ module.exports = {
         test: /\.(png|svg|jpg|jpeg|gif)$/i,
         type: 'asset/inline',
       },
+      // FONTS //
+      {
+        test: /\.(eot|ttf|woff|woff2)$/,
+        type: 'asset/resource',
+        generator: {
+          filename: 'fonts/[name]-[hash:8][ext]',
+        },
+      },
     ],
   },
 
@@ -111,13 +108,13 @@ module.exports = {
     // copy assets
     new CopyWebpackPlugin({
       patterns: [
-        // { from: 'src/assets/img', to: 'img' },
-        { from: 'src/assets/robots.txt', to: '' },
+        { from: 'src/assets/img', to: 'img' },      // copy images
+        { from: 'src/assets/robots.txt', to: '' },  // copy robots.txt
       ],
     }),
 
     new MiniCssExtractPlugin({
-      filename: '[name].bundle-[hash:8].css'
+      filename: 'styles.bundle-[hash:8].css'
     }),
 
     // gzip compression

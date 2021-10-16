@@ -1,23 +1,10 @@
 const path = require('path');
-// const webpack = require('webpack');
 
 // import plugins
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
-// const pages = [
-//   {
-//     name: 'index',
-//     title: 'MPA | Index page',
-//   },
-//   {
-//     name: 'second',
-//     title: 'MPA | Second page',
-//   },
-// ];
-
-// paths
-// __dirname; // nodejs system const
+// paths (__dirname; // nodejs system const)
 const paths = {
   src:        path.resolve(__dirname, 'src'),
   indexPage:  path.resolve(__dirname, 'src', 'index-page'),
@@ -81,11 +68,18 @@ module.exports = {
           { loader: 'sass-loader', options: { sourceMap: true } },
         ]
       },
-
       // IMG //
       {
         test: /\.(png|svg|jpg|jpeg|gif)$/i,
         type: 'asset/inline',
+      },
+      // FONTS //
+      {
+        test: /\.(eot|ttf|woff|woff2)$/,
+        type: 'asset/resource',
+        generator: {
+          filename: 'fonts/[name][ext]',
+        },
       },
     ],
   },
@@ -94,18 +88,21 @@ module.exports = {
     // COPY ASSETS FILES //
     new CopyWebpackPlugin({
       patterns: [
-        // { from: 'src/assets/img', to: 'img' },
-        { from: 'src/assets/robots.txt', to: '' },
+        { from: 'src/assets/img', to: 'img' },     // copy image
+        { from: 'src/assets/robots.txt', to: '' }, // copy robots.tsx
       ],
     }),
 
     // HTML - MPA //
+    // index
     new HtmlWebpackPlugin({
       title: 'MPA | Index page',
       favicon: `${paths.src}/assets/img/icons/favicon.png`,
       template: `${paths.indexPage}/index.html`,
       filename: 'index.html',
     }),
+
+    // second
     new HtmlWebpackPlugin({
       title: 'MPA | Second page',
       favicon: `${paths.src}/assets/img/icons/favicon.png`,
@@ -114,6 +111,3 @@ module.exports = {
     }),
   ]
 };
-
-// add bootstrap
-{/* <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous"> */}

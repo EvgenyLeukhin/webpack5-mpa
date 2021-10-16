@@ -2,6 +2,26 @@
 
 Webpack custom builder for static landing pages or multipage web-applications
 
+* babel +++
+* images +++
+  * img-tags +++
+  * backgroud-images +++
+  * bacground-image (url-loader) +++
+  * images prod optimization ---
+  * img-tags (url-loader) ---
+  * handle images without CopyWebpackPlugin ---
+* styles +++
+  * use scss +++
+  * use vars and mixins +++
+  * styles autoprefixers and optimization +++
+  * one bundle in prod-mode +++
+* html +++
+  * include common html-parts with html-preproc ---
+* fonts +++
+* favicons +++
+* check deploy ---
+* add some js-code and libraries ---
+
 ## npm
 [https://www.npmjs.com/](https://www.npmjs.com/)
 
@@ -50,11 +70,4 @@ install IDE ESlint plugin
 ```
 
 
-## TODO
 
-* Fonts loading +++
-* Images and styles autoprefixes and optimization
-* Images (without copy)
-* New progress bar
-* Check it on prod servers
-* Add some js-code and libraries
