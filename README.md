@@ -9,7 +9,7 @@ Webpack custom builder for static landing pages or multipage web-applications
   * inline backgroud-images ---
   * bacground-image in css +++
   * images prod optimization ---
-  * url-loader ---
+  * url-loader +++
   * handle images without CopyWebpackPlugin +++
 * styles +++
   * use scss +++

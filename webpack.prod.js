@@ -71,7 +71,7 @@ module.exports = {
       // HTML (need for images loading) //
       {
         test: /\.html$/i,
-        loader: "html-loader",
+        loader: 'html-loader',
       },
       // JS //
       {
@@ -92,9 +92,9 @@ module.exports = {
       // IMG //
       {
         test: /\.(jpe?g|svg|png|gif)$/,
-        type: "asset/resource",
+        type: 'asset',
         generator: {
-          filename: "img/[name]-[hash:8][ext]",
+          filename: 'img/[name]-[hash:8][ext]',
         },
       },
       // FONTS //

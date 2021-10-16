@@ -56,7 +56,7 @@ module.exports = {
       // HTML (need for images loading) //
       {
         test: /\.html$/i,
-        loader: "html-loader",
+        loader: 'html-loader',
       },
       // JS //
       {
@@ -76,7 +76,7 @@ module.exports = {
       // IMG //
       {
         test: /\.(jpe?g|svg|png|gif)$/,
-        type: 'asset/resource',
+        type: 'asset', // asset/resource(file-loader) | asset/inline(url-loader) | asset/source(raw-loader) | asset (auto)
         generator: {
           filename: 'img/[name][ext]',
         },
