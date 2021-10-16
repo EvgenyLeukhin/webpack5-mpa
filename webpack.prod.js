@@ -30,18 +30,6 @@ module.exports = {
   mode: 'production',
   target: 'web',
 
-  // dev server
-  devServer: {
-    open: true,
-    compress: true,
-    port: 8888,
-    liveReload: true,
-    client: {
-      progress: true,
-    },
-    watchFiles: [`${paths.src}/**/*`, 'public/**/*'],
-  },
-
   // input-output
   entry: {
     index: `${paths.src}/index.js`,

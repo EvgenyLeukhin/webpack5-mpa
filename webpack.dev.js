@@ -15,6 +15,7 @@ module.exports = {
   // mode
   mode: 'development',
   target: 'web',
+  devtool: 'inline-source-map',
 
   // dev server
   devServer: {
@@ -33,6 +34,7 @@ module.exports = {
     index: `${paths.src}/index.js`,
   },
   output: {
+    clean: true,
     path: path.resolve(__dirname, 'build'),
     filename: '[name].bundle.js',
     publicPath: '',
@@ -55,7 +57,7 @@ module.exports = {
     rules: [
       // HTML (need for images loading) //
       {
-        test: /\.html$/i,
+        test: /\.html$/,
         loader: 'html-loader',
       },
       // JS //
@@ -80,6 +82,11 @@ module.exports = {
         generator: {
           filename: 'img/[name][ext]',
         },
+        // parser: {
+        //   dataUrlCondition: {
+        //     maxSize: 30 * 1024,
+        //   }
+        // }
       },
 
       // FONTS //
@@ -101,7 +108,7 @@ module.exports = {
     //   ],
     // }),
 
-    // HTML - MPA //
+    // HTML - MPA // title - doesn't works
     // index
     new HtmlWebpackPlugin({
       favicon: `${paths.src}/assets/img/icons/favicon.png`,
