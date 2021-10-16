@@ -21,6 +21,9 @@ const minifyHtmlOptions = {
 // paths
 const paths = {
   src:        path.resolve(__dirname, 'src'),
+  srcImg:     path.resolve(__dirname, 'src', 'assets', 'img'),
+  build:      path.resolve(__dirname, 'build'),
+  buildImg:   path.resolve(__dirname, 'build', 'assets', 'img'),
   indexPage:  path.resolve(__dirname, 'src', 'index-page'),
   secondPage: path.resolve(__dirname, 'src', 'second-page'),
 }
@@ -56,11 +59,6 @@ module.exports = {
 
   module: {
     rules: [
-      // HTML (need for images loading) //
-      {
-        test: /\.html$/i,
-        loader: 'html-loader',
-      },
       // JS //
       {
         test: /\.js$/,
@@ -103,7 +101,14 @@ module.exports = {
     // copy assets
     new CopyWebpackPlugin({
       patterns: [
-        // { from: 'src/assets/img', to: 'img' },      // copy images
+        {
+          from: paths.srcImg,
+          to: paths.buildImg,
+          toType: 'dir',
+          globOptions: {
+            ignore: ['*.DS_Store', 'Thumbs.db'],
+          },
+        },
         { from: 'src/assets/robots.txt', to: '' },  // copy robots.txt
       ],
     }),

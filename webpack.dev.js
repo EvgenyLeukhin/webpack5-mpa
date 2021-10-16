@@ -2,11 +2,14 @@ const path = require('path');
 
 // import plugins
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-// const CopyWebpackPlugin = require('copy-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 // paths (__dirname; // nodejs system const)
 const paths = {
   src:        path.resolve(__dirname, 'src'),
+  srcImg:     path.resolve(__dirname, 'src', 'assets', 'img'),
+  build:      path.resolve(__dirname, 'build'),
+  buildImg:   path.resolve(__dirname, 'build', 'assets', 'img'),
   indexPage:  path.resolve(__dirname, 'src', 'index-page'),
   secondPage: path.resolve(__dirname, 'src', 'second-page'),
 }
@@ -55,11 +58,6 @@ module.exports = {
 
   module: {
     rules: [
-      // HTML (need for images loading) //
-      {
-        test: /\.html$/,
-        loader: 'html-loader',
-      },
       // JS //
       {
         test: /\.js$/,
@@ -102,11 +100,18 @@ module.exports = {
 
   plugins: [
     // COPY ASSETS FILES //
-    // new CopyWebpackPlugin({
-    //   patterns: [
-    //     { from: 'src/assets/img', to: 'img' }, // copy images (change to img/smile.png)
-    //   ],
-    // }),
+    new CopyWebpackPlugin({
+      patterns: [
+        {
+          from: paths.srcImg,
+          to: paths.buildImg,
+          toType: 'dir',
+          globOptions: {
+            ignore: ['*.DS_Store', 'Thumbs.db'],
+          },
+        },
+      ],
+    }),
 
     // HTML - MPA // title - doesn't works
     // index
