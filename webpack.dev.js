@@ -2,7 +2,7 @@ const path = require('path');
 
 // import plugins
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
+// const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 // paths (__dirname; // nodejs system const)
 const paths = {
@@ -95,11 +95,11 @@ module.exports = {
 
   plugins: [
     // COPY ASSETS FILES //
-    new CopyWebpackPlugin({
-      patterns: [
-        { from: 'src/assets/robots.txt', to: '' }, // copy robots.tsx
-      ],
-    }),
+    // new CopyWebpackPlugin({
+    //   patterns: [
+    //     { from: 'src/assets/img', to: 'img' }, // copy images (change to img/smile.png)
+    //   ],
+    // }),
 
     // HTML - MPA //
     // index
